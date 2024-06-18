@@ -292,7 +292,7 @@ export default function Dashboard() {
                 <section className="flex flex-col items-start justify-start p-4 gap-2 w-full h-auto first-letter:capitalize text-left">
                   <p className="text-gray-300 text-sm font-thin items-start p-2">
                     Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum has been the industry's
+                    typesetting industry. Lorem Ipsum has been the industry
                     standard dummy text ever since the 1500s, when an unknown
                     printer took a galley of type and scrambled it to make a
                     type specimen book. It has survived not only five centuries,
@@ -304,7 +304,7 @@ export default function Dashboard() {
                   </p>
                   <p className="text-gray-300 text-sm font-thin items-start p-2">
                     Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum has been the industry's
+                    typesetting industry. Lorem Ipsum has been the industry
                     standard dummy text ever since the 1500s, when an unknown
                     printer took a galley of type and scrambled it to make a
                     type specimen book. It has survived not only five centuries,
@@ -316,7 +316,7 @@ export default function Dashboard() {
                   </p>
                   <p className="text-gray-300 text-sm font-thin items-start p-2">
                     Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum has been the industry's
+                    typesetting industry. Lorem Ipsum has been the industry
                     standard dummy text ever since the 1500s, when an unknown
                     printer took a galley of type and scrambled it to make a
                     type specimen book. It has survived not only five centuries,
