@@ -1,0 +1,17 @@
+@keyframes pulse-yellow {
+    0% {
+        color: #ffc107;
+    }
+
+    50% {
+        color: white;
+    }
+
+    100% {
+        color: #ffc107;
+    }
+}
+
+.animate-pulse-yellow {
+    animation: pulse-yellow 1.5s infinite;
+}
