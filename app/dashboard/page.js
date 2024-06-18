@@ -444,38 +444,55 @@ export default function Dashboard() {
                           Name Here
                         </div>
                       </div>
-                      <div className="self-center text-left font-thin text-size-[14px] overflow-hidden">
-                        Harsh I worked in the same team for a project for 6
-                        months.&nbsp;
-                        <span id="full-text" className="hidden">
-                          He is very fast learner. Being an intern, He was able
-                          to understand project objective and learned the
-                          required skills very quickly. He contributed to both
-                          frontend and backend part of the project. He posses
-                          very good presentation and communication skill. He
-                          also got very positive attitude to his work. Harsh
-                          will be an asset to any team and I wish him all the
-                          very best.
-                        </span>
-                      </div>
                       <div
                         className="cursor-pointer"
-                        onClick={() =>
+                        onClick={() => {
                           document
                             .getElementById("full-text")
-                            .classList.toggle("hidden")
-                        }
+                            .classList.toggle("hidden");
+                          document
+                            .getElementById("popup")
+                            .classList.toggle("hidden");
+                        }}
                       >
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 320 512"
-                          className="w-5 h-5"
-                        >
-                          <path
-                            fill="#ffffff"
-                            d="M137.4 374.6c12.5 12.5 32.8 12.5 45.3 0l128-128c9.2-9.2 11.9-22.9 6.9-34.9s-16.6-19.8-29.6-19.8L32 192c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9l128 128z"
-                          />
-                        </svg>
+                        <div className="bg-[#212123] rounded-xl p-3">
+                          Show more
+                        </div>
+                      </div>
+                      <div
+                        id="popup"
+                        className="hidden fixed top-0 left-0 w-full h-full bg-[#212123] z-50"
+                      >
+                        <div className="fixed top-0 left-0 w-full h-full bg-[#212123] opacity-75 z-30"></div>
+                        <div className="bg-[#212123] rounded-xl absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 p-3 z-40">
+                          <div className="text-white">
+                            Harsh I worked in the same team for a project for 6
+                            months.&nbsp;
+                            <span id="full-text" className="hidden">
+                              He is very fast learner. Being an intern, He was
+                              able to understand project objective and learned
+                              the required skills very quickly. He contributed
+                              to both frontend and backend part of the project.
+                              He posses very good presentation and communication
+                              skill. He also got very positive attitude to his
+                              work. Harsh will be an asset to any team and I
+                              wish him all the very best.
+                            </span>
+                          </div>
+                          <div
+                            className="cursor-pointer"
+                            onClick={() => {
+                              document
+                                .getElementById("full-text")
+                                .classList.toggle("hidden");
+                              document
+                                .getElementById("popup")
+                                .classList.toggle("hidden");
+                            }}
+                          >
+                            Close
+                          </div>
+                        </div>
                       </div>
                     </div>
                     <div className="max-w-[380px] min-w-[350px] rounded-3xl min-h-[200px] flex  flex-col items-center justify-center gap-3 p-[18px] bg-[#212123] border-[1px] content-center">
@@ -532,7 +549,7 @@ export default function Dashboard() {
                 <section className="flex flex-col gap-3 items-center justify-center mt-4">
                   <h1 className="text-2xl font-bold">Experience</h1>
                   <div className="flex flex-wrap justify-center items-center gap-2">
-                    <div className="flex justify-center items-center w-[150px] h-[120px] ">
+                    <div className="w-[150px] h-[120px] ">
                       <Image
                         src="/Avtar.png"
                         width={60}
@@ -540,7 +557,7 @@ export default function Dashboard() {
                         alt="Picture of the author"
                       />
                     </div>
-                    <div className="flex justify-center items-center w-[150px] h-[120px] ">
+                    <div className="w-[150px] h-[120px] ">
                       <Image
                         src="/Avtar.png"
                         width={60}
@@ -548,7 +565,7 @@ export default function Dashboard() {
                         alt="Picture of the author"
                       />
                     </div>
-                    <div className="flex justify-center items-center w-[150px] h-[120px] ">
+                    <div className="w-[150px] h-[120px] ">
                       <Image
                         src="/Avtar.png"
                         width={60}
@@ -556,7 +573,7 @@ export default function Dashboard() {
                         alt="Picture of the author"
                       />
                     </div>
-                    <div className="flex justify-center items-center w-[150px] h-[120px] ">
+                    <div className="w-[150px] h-[120px] ">
                       <Image
                         src="/Avtar.png"
                         width={60}
