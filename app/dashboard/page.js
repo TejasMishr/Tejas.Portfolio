@@ -1,12 +1,20 @@
+"use client";
 import Image from "next/image";
+import React from "react";
 import "./page.css";
 export default function Dashboard() {
+  const [activeTab, setActiveTab] = React.useState("");
+
+  const handleTabClick = (tab) => {
+    setActiveTab(tab);
+  };
+
   return (
-    <div className="text-center p-8 h-full w-full">
+    <div className="text-center p-8 max-w-[1250px] h-screen overflow-auto">
       <h1>Dashboard</h1>
-      <div className="flex gap-3 justify-between p-3">
+      <div className="flex gap-3 justify-between p-3 max-w-[1250px]">
         {/* Contact DIV */}
-        <div className=" p-4 h-full w-[280px] rounded-lg bg-[#1e1e1f]">
+        <div className=" p-4 h-full w-[280px] rounded-lg bg-[#1e1e1f] border-[1px] border-[#555556] sticky top-1">
           <div className="align-middle">
             <div className="text-3xl pt-5 p-3 flex flex-col gap-2">
               <div className="animate-rotate rounded-3xl border-[1px] border-solid border-rgb(34, 116, 107) bg-[#343434]">
@@ -187,8 +195,411 @@ export default function Dashboard() {
         </div>
         {/* Contact DIV ENDS HERE */}
 
-        {/* Profile DIV */}
-        <div className=" h-full w-full "></div>
+        {/* Profile DIV STARTS HERE */}
+
+        {/* Main Content */}
+        <div className="h-full w-full rounded-2xl bg-[#1e1e1f] border-[1px] border-[#5555566">
+          <div className="">
+            <div className="Nav flex justify-end items-end flex-col relative z-10">
+              <nav className="navbar h-12 bg-[#282829] backdrop-blur-md border-[1px] border-[#282829] shadow-md flex justify-end items-center rounded-b-2xl rounded-r-2xl px-10 z-50  w-[580px] max-md:fixed bottom-0 right-0">
+                <ul className="navbar-list flex gap-7">
+                  <li className="navbar-item">
+                    <button
+                      className={`navbar-link text-gray-200  font-light font-['lato']  focus:outline-none hover:text-orange-400 ${
+                        activeTab === "about" || activeTab === ""
+                          ? "text-orange-500"
+                          : ""
+                      }`}
+                      data-nav-link
+                      onClick={() => setActiveTab("about")}
+                    >
+                      About
+                    </button>
+                  </li>
+
+                  <li className="navbar-item">
+                    <button
+                      className={`navbar-link text-gray-200 font-light font-['lato'] focus:outline-none hover:text-orange-400 ${
+                        activeTab === "resume" ? "text-orange-500" : ""
+                      }`}
+                      data-nav-link
+                      onClick={() => setActiveTab("resume")}
+                    >
+                      Resume
+                    </button>
+                  </li>
+
+                  <li className="navbar-item">
+                    <button
+                      className={`navbar-link text-gray-200 font-light font-['lato'] focus:outline-none hover:text-orange-400 ${
+                        activeTab === "projects" ? "text-orange-500" : ""
+                      }`}
+                      data-nav-link
+                      onClick={() => setActiveTab("projects")}
+                    >
+                      Projects
+                    </button>
+                  </li>
+
+                  <li className="navbar-item">
+                    <button
+                      className={`navbar-link text-gray-200 font-light font-['lato'] focus:outline-none hover:text-orange-400 ${
+                        activeTab === "certifications" ? "text-orange-500" : ""
+                      }`}
+                      data-nav-link
+                      onClick={() => setActiveTab("certifications")}
+                    >
+                      Certifications
+                    </button>
+                  </li>
+
+                  <li className="navbar-item">
+                    <button
+                      className={`navbar-link text-gray-200 font-light font-['lato'] focus:outline-none hover:text-orange-400 ${
+                        activeTab === "extra" ? "text-orange-500" : ""
+                      }`}
+                      data-nav-link
+                      onClick={() => setActiveTab("extra")}
+                    >
+                      Extra
+                    </button>
+                  </li>
+                  <li className="navbar-item">
+                    <button
+                      className={`navbar-link text-gray-200 font-light font-['lato'] focus:outline-none hover:text-orange-400 ${
+                        activeTab === "contact" ? "text-orange-500" : ""
+                      }`}
+                      data-nav-link
+                      onClick={() => setActiveTab("contact")}
+                    >
+                      Contact
+                    </button>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+
+            {/* Tabs Start Here */}
+            {(activeTab === "about" || activeTab === "") && (
+              <>
+                {/* About Header */}
+                <header className="relative -top-[30px] items-start justify-start flex pl-4 font-bold text-3xl flex-col">
+                  <span className="pl-2">About Me</span>
+                  <hr className="w-10 h-[3px] bg-[#d8cb3f] ml-2 mt-2 rounded-full" />
+                </header>
+
+                {/* About Me Section */}
+                <section className="flex flex-col items-start justify-start p-4 gap-2 w-full h-auto first-letter:capitalize text-left">
+                  <p className="text-gray-300 text-sm font-thin items-start p-2">
+                    Lorem Ipsum is simply dummy text of the printing and
+                    typesetting industry. Lorem Ipsum has been the industry's
+                    standard dummy text ever since the 1500s, when an unknown
+                    printer took a galley of type and scrambled it to make a
+                    type specimen book. It has survived not only five centuries,
+                    but also the leap into electronic typesetting, remaining
+                    essentially unchanged. It was popularised in the 1960s with
+                    the release of Letraset sheets containing Lorem Ipsum
+                    passages, and more recently with desktop publishing software
+                    like Aldus PageMaker including versions of Lorem Ipsum
+                  </p>
+                  <p className="text-gray-300 text-sm font-thin items-start p-2">
+                    Lorem Ipsum is simply dummy text of the printing and
+                    typesetting industry. Lorem Ipsum has been the industry's
+                    standard dummy text ever since the 1500s, when an unknown
+                    printer took a galley of type and scrambled it to make a
+                    type specimen book. It has survived not only five centuries,
+                    but also the leap into electronic typesetting, remaining
+                    essentially unchanged. It was popularised in the 1960s with
+                    the release of Letraset sheets containing Lorem Ipsum
+                    passages, and more recently with desktop publishing software
+                    like Aldus PageMaker including versions of Lorem Ipsum
+                  </p>
+                  <p className="text-gray-300 text-sm font-thin items-start p-2">
+                    Lorem Ipsum is simply dummy text of the printing and
+                    typesetting industry. Lorem Ipsum has been the industry's
+                    standard dummy text ever since the 1500s, when an unknown
+                    printer took a galley of type and scrambled it to make a
+                    type specimen book. It has survived not only five centuries,
+                    but also the leap into electronic typesetting, remaining
+                    essentially unchanged. It was popularised in the 1960s with
+                    the release of Letraset sheets containing Lorem Ipsum
+                    passages, and more recently with desktop publishing software
+                    like Aldus PageMaker including versions of Lorem Ipsum
+                  </p>
+                </section>
+                {/* My interest Section */}
+                <section className="flex flex-col items-start justify-start p-4 gap-2 w-full h-auto first-letter:capitalize text-left">
+                  <div className="w-full font-bold text-2xl flex-col">
+                    My Interests
+                  </div>
+                  <div className="w-full flex flex-wrap gap-[18px] p-[30px] justify-between">
+                    <div className="max-w-[360px] rounded-3xl min-h-[200px] flex items-center justify-center gap-3 p-[18px] bg-[#212123] border-[1px]">
+                      <div className="flex flex-col gap-2 p-3">
+                        <span className="text-xl font-semibold flex gap-3">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 512 512"
+                            className="w-7 h-7"
+                          >
+                            <path
+                              fill="#ffc107"
+                              d="M64 64C46.3 64 32 78.3 32 96V416c0 17.7 14.3 32 32 32H448c17.7 0 32-14.3 32-32V96c0-17.7-14.3-32-32-32H64zM0 96C0 60.7 28.7 32 64 32H448c35.3 0 64 28.7 64 64V416c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V96zm96 8a24 24 0 1 1 0 48 24 24 0 1 1 0-48zm72 24a24 24 0 1 1 48 0 24 24 0 1 1 -48 0zm120-24a24 24 0 1 1 0 48 24 24 0 1 1 -48 0z"
+                            />
+                          </svg>
+                          <span>Web Development</span>
+                        </span>
+                        <span className="text-sm">
+                          Built websites during my internship at Apple and Yash
+                          Technologies using HTML, CSS, Knockout JS, Oracle Jet
+                          and SpringBoot.
+                        </span>
+                      </div>
+                    </div>
+                    <div className="max-w-[360px] rounded-3xl min-h-[200px] flex items-center justify-center gap-3 p-[18px] bg-[#212123] border-[1px]">
+                      <div className="flex flex-col gap-2 p-3">
+                        <span className="text-xl font-semibold flex gap-3">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 512 512"
+                            className="w-7 h-7"
+                          >
+                            <path
+                              fill="#ffc107"
+                              d="M64 64C46.3 64 32 78.3 32 96V416c0 17.7 14.3 32 32 32H448c17.7 0 32-14.3 32-32V96c0-17.7-14.3-32-32-32H64zM0 96C0 60.7 28.7 32 64 32H448c35.3 0 64 28.7 64 64V416c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V96zm96 8a24 24 0 1 1 0 48 24 24 0 1 1 0-48zm72 24a24 24 0 1 1 48 0 24 24 0 1 1 -48 0zm120-24a24 24 0 1 1 0 48 24 24 0 1 1 -48 0z"
+                            />
+                          </svg>
+                          <span>Web Development</span>
+                        </span>
+                        <span className="text-sm">
+                          Built websites during my internship at Apple and Yash
+                          Technologies using HTML, CSS, Knockout JS, Oracle Jet
+                          and SpringBoot.
+                        </span>
+                      </div>
+                    </div>
+                    <div className="max-w-[360px] rounded-3xl min-h-[200px] flex items-center justify-center gap-3 p-[18px] bg-[#212123] border-[1px]">
+                      <div className="flex flex-col gap-2 p-3">
+                        <span className="text-xl font-semibold flex gap-3">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 512 512"
+                            className="w-7 h-7"
+                          >
+                            <path
+                              fill="#ffc107"
+                              d="M64 64C46.3 64 32 78.3 32 96V416c0 17.7 14.3 32 32 32H448c17.7 0 32-14.3 32-32V96c0-17.7-14.3-32-32-32H64zM0 96C0 60.7 28.7 32 64 32H448c35.3 0 64 28.7 64 64V416c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V96zm96 8a24 24 0 1 1 0 48 24 24 0 1 1 0-48zm72 24a24 24 0 1 1 48 0 24 24 0 1 1 -48 0zm120-24a24 24 0 1 1 0 48 24 24 0 1 1 -48 0z"
+                            />
+                          </svg>
+                          <span>Web Development</span>
+                        </span>
+                        <span className="text-sm">
+                          Built websites during my internship at Apple and Yash
+                          Technologies using HTML, CSS, Knockout JS, Oracle Jet
+                          and SpringBoot.
+                        </span>
+                      </div>
+                    </div>
+                    <div className="max-w-[360px] rounded-3xl min-h-[200px] flex items-center justify-center gap-3 p-[18px] bg-[#212123] border-[1px]">
+                      <div className="flex flex-col gap-2 p-3">
+                        <span className="text-xl font-semibold flex gap-3">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 512 512"
+                            className="w-7 h-7"
+                          >
+                            <path
+                              fill="#ffc107"
+                              d="M64 64C46.3 64 32 78.3 32 96V416c0 17.7 14.3 32 32 32H448c17.7 0 32-14.3 32-32V96c0-17.7-14.3-32-32-32H64zM0 96C0 60.7 28.7 32 64 32H448c35.3 0 64 28.7 64 64V416c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V96zm96 8a24 24 0 1 1 0 48 24 24 0 1 1 0-48zm72 24a24 24 0 1 1 48 0 24 24 0 1 1 -48 0zm120-24a24 24 0 1 1 0 48 24 24 0 1 1 -48 0z"
+                            />
+                          </svg>
+                          <span>Web Development</span>
+                        </span>
+                        <span className="text-sm">
+                          Built websites during my internship at Apple and Yash
+                          Technologies using HTML, CSS, Knockout JS, Oracle Jet
+                          and SpringBoot.
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+
+                {/* Testimonials / Recommendations */}
+
+                <section className="flex flex-col gap-3 items-center justify-center">
+                  <h1 className="text-2xl font-bold">Testimonials</h1>
+
+                  <div className="flex overflow-x-auto gap-3 max-w-[730px] p-3">
+                    <div className="max-w-[380px] min-w-[350px] rounded-3xl min-h-[200px] flex  flex-col items-center justify-center gap-3 p-[18px] bg-[#212123] border-[1px] content-center">
+                      <div className="self-start flex gap-3 justify-center items-center p-1">
+                        <div className="animate-pulse min-h-[60px] min-w-[60px] rounded-2xl bg-[#2a2a2b]">
+                          <Image
+                            src="/Avtar.png"
+                            width={60}
+                            height={60}
+                            alt="Picture of the author"
+                          />
+                        </div>
+                        <div className="font-semibold items-center flex justify-center p-3">
+                          Name Here
+                        </div>
+                      </div>
+                      <div className="self-center text-left font-thin text-size-[14px] overflow-hidden">
+                        Harsh I worked in the same team for a project for 6
+                        months.&nbsp;
+                        <span id="full-text" className="hidden">
+                          He is very fast learner. Being an intern, He was able
+                          to understand project objective and learned the
+                          required skills very quickly. He contributed to both
+                          frontend and backend part of the project. He posses
+                          very good presentation and communication skill. He
+                          also got very positive attitude to his work. Harsh
+                          will be an asset to any team and I wish him all the
+                          very best.
+                        </span>
+                      </div>
+                      <div
+                        className="cursor-pointer"
+                        onClick={() =>
+                          document
+                            .getElementById("full-text")
+                            .classList.toggle("hidden")
+                        }
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 320 512"
+                          className="w-5 h-5"
+                        >
+                          <path
+                            fill="#ffffff"
+                            d="M137.4 374.6c12.5 12.5 32.8 12.5 45.3 0l128-128c9.2-9.2 11.9-22.9 6.9-34.9s-16.6-19.8-29.6-19.8L32 192c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9l128 128z"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                    <div className="max-w-[380px] min-w-[350px] rounded-3xl min-h-[200px] flex  flex-col items-center justify-center gap-3 p-[18px] bg-[#212123] border-[1px] content-center">
+                      <div className="self-start flex gap-3 justify-center items-center p-1">
+                        <div className="animate-pulse min-h-[60px] min-w-[60px] rounded-full">
+                          <Image
+                            src="/Avtar.png"
+                            width={60}
+                            height={60}
+                            alt="Picture of the author"
+                          />
+                        </div>
+                        <div className="font-semibold items-center flex justify-center p-3">
+                          Name Here
+                        </div>
+                      </div>
+                      <div className="self-center text-left font-thin text-size-[14px] overflow-hidden">
+                        Harsh I worked in the same team for a project for 6
+                        months.&nbsp;
+                        <span id="full-text" className="hidden">
+                          He is very fast learner. Being an intern, He was able
+                          to understand project objective and learned the
+                          required skills very quickly. He contributed to both
+                          frontend and backend part of the project. He posses
+                          very good presentation and communication skill. He
+                          also got very positive attitude to his work. Harsh
+                          will be an asset to any team and I wish him all the
+                          very best.
+                        </span>
+                      </div>
+                      <div
+                        className="cursor-pointer"
+                        onClick={() =>
+                          document
+                            .getElementById("full-text")
+                            .classList.toggle("hidden")
+                        }
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 320 512"
+                          className="w-5 h-5"
+                        >
+                          <path
+                            fill="#ffffff"
+                            d="M137.4 374.6c12.5 12.5 32.8 12.5 45.3 0l128-128c9.2-9.2 11.9-22.9 6.9-34.9s-16.6-19.8-29.6-19.8L32 192c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9l128 128z"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+                {/* Experience */}
+                <section className="flex flex-col gap-3 items-center justify-center mt-4">
+                  <h1 className="text-2xl font-bold">Experience</h1>
+                  <div className="flex flex-wrap justify-center items-center gap-2">
+                    <div className="flex justify-center items-center w-[150px] h-[120px] ">
+                      <Image
+                        src="/Avtar.png"
+                        width={60}
+                        height={60}
+                        alt="Picture of the author"
+                      />
+                    </div>
+                    <div className="flex justify-center items-center w-[150px] h-[120px] ">
+                      <Image
+                        src="/Avtar.png"
+                        width={60}
+                        height={60}
+                        alt="Picture of the author"
+                      />
+                    </div>
+                    <div className="flex justify-center items-center w-[150px] h-[120px] ">
+                      <Image
+                        src="/Avtar.png"
+                        width={60}
+                        height={60}
+                        alt="Picture of the author"
+                      />
+                    </div>
+                    <div className="flex justify-center items-center w-[150px] h-[120px] ">
+                      <Image
+                        src="/Avtar.png"
+                        width={60}
+                        height={60}
+                        alt="Picture of the author"
+                      />
+                    </div>
+                  </div>
+                </section>
+              </>
+            )}
+            {activeTab === "resume" && <div>Tab-2</div>}
+
+            {activeTab === "projects" && <div>Tab-3</div>}
+            {activeTab === "education" && <div>Tab-4</div>}
+            {activeTab === "certifications" && <div>Tab-5</div>}
+            {activeTab === "extra" && <div>Tab-6</div>}
+            {activeTab === "contact" && <div>Tab-7</div>}
+
+            {activeTab !== "about" && (
+              <div style={{ display: "none" }}>Tab-1</div>
+            )}
+            {activeTab !== "resume" && (
+              <div style={{ display: "none" }}>Tab-2</div>
+            )}
+
+            {activeTab !== "projects" && (
+              <div style={{ display: "none" }}>Tab-3</div>
+            )}
+            {activeTab !== "education" && (
+              <div style={{ display: "none" }}>Tab-4</div>
+            )}
+            {activeTab !== "certifications" && (
+              <div style={{ display: "none" }}>Tab-5</div>
+            )}
+            {activeTab !== "extra" && (
+              <div style={{ display: "none" }}>Tab-6</div>
+            )}
+            {activeTab !== "contact" && (
+              <div style={{ display: "none" }}>Tab-7</div>
+            )}
+          </div>
+        </div>
       </div>
     </div>
   );
