@@ -12,32 +12,15 @@ export default function Testimonial({
   fulldecription,
 }) {
   const [isVisible, setIsVisible] = useState(false);
-  if (isVisible) {
-    window.history.replaceState(
-      {},
-      document.title,
-      `${window.location.pathname}?modal=true`
-    );
-  } else {
-    window.history.replaceState(
-      {},
-      document.title,
-      `${window.location.pathname}?modal=false`
-    );
-  }
-  const toggleModel = () => {
-    setIsVisible(!isVisible);
-  };
 
+  const toggleModel = () => setIsVisible(!isVisible);
   return (
     <div
-      className={`max-w-[380px] min-w-[350px] rounded-3xl min-h-[200px] flex  flex-col items-center justify-center gap-3 p-[18px] bg-[#212123] border-[1px] content-center ${
-        isVisible && "cursor-pointer"
-      }`}
+      className="max-w-[380px] min-w-[350px] rounded-3xl min-h-[200px] flex flex-col items-center justify-center gap-3 p-[18px] bg-[#212123] border-[1px] content-center"
       onClick={toggleModel}
     >
       <div className="self-start flex gap-3 justify-center items-center p-1">
-        <div className="animate-pulse min-h-[60px] min-w-[60px] rounded-full">
+        <div className="animate-pulse min-h-[60px] min-w-[60px] rounded-3xl bg-[#343434]">
           <Image
             src={imageSrc}
             width={60}
@@ -50,18 +33,9 @@ export default function Testimonial({
         </div>
       </div>
       <div className="self-center text-left font-thin text-size-[14px] overflow-hidden">
-        {description}
+        {description + `...`}
       </div>
-      {isVisible && (
-        <Link href={`/dashboard/?modal=true`} replace>
-          <Model
-            content={fulldecription}
-            name={name}
-            imageSrc={imageSrc}
-            url={link}
-          />
-        </Link>
-      )}
+      {isVisible && <Model content={fulldecription} name={name} url={link} />}
     </div>
   );
 }

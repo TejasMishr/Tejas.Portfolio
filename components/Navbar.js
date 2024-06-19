@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Navbar() {
-  return <h1>Hello, Home page!</h1>;
+  return <Link href="/dashboard">Click Me</Link>;
 }

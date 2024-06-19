@@ -5,6 +5,78 @@ import "./page.css";
 import Model from "@/components/Model";
 import Link from "next/link";
 import Testimonial from "@/components/Testimonial";
+const Testimonials = [
+  {
+    name: "Aditya Raj",
+    imageSrc: "/avtar2.png",
+    description:
+      "Tejas & I worked in the same team for a project for 6 months. He is very fast learner",
+    link: "https://www.google.com",
+    fulldecription: `Harsh I worked in the same team for a project for 6 months. He is very fast learner. Being an intern, He was able to understand project objective and learned the required skills very quickly. He contributed to both frontend and backend part of the project.
+He posses very good presentation and communication skill. He also got very positive attitude to his work.
+Harsh will be an asset to any team and I wish him all the very best.`,
+  },
+  {
+    name: "Anonymous",
+    imageSrc: "/avtar3.webp",
+    description:
+      "lorem ipsum dolor sit ame met, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna alit",
+    link: "https://www.google.com",
+    fulldecription:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  },
+
+  {
+    name: "Shubham",
+    imageSrc: "/Avtar.png",
+    description: "xyz",
+    link: "https://www.google.com",
+    fulldecription: "xyz",
+  },
+];
+
+const Experiences = [
+  {
+    company: "Physics Wallah",
+    logo: "/pw.png",
+  },
+  {
+    company: "IBM",
+    logo: "/ibm.png",
+  },
+  {
+    company: "Physics Wallah",
+    logo: "/pw.png",
+  },
+  {
+    company: "IBM",
+    logo: "/ibm.png",
+  },
+  {
+    company: "Physics Wallah",
+    logo: "/pw.png",
+  },
+  {
+    company: "IBM",
+    logo: "/ibm.png",
+  },
+  {
+    company: "Physics Wallah",
+    logo: "/pw.png",
+  },
+  {
+    company: "IBM",
+    logo: "/ibm.png",
+  },
+  {
+    company: "Physics Wallah",
+    logo: "/pw.png",
+  },
+  {
+    company: "IBM",
+    logo: "/ibm.png",
+  },
+];
 export default function Dashboard() {
   const [activeTab, setActiveTab] = React.useState("");
 
@@ -288,7 +360,7 @@ export default function Dashboard() {
                 {/* About Header */}
                 <header className="relative -top-[30px] items-start justify-start flex pl-4 font-bold text-3xl flex-col">
                   <span className="pl-2">About Me</span>
-                  <hr className="w-10 h-[3px] bg-[#d8cb3f] ml-2 mt-2 rounded-full" />
+                  <hr className="w-[40px] h-[3px] bg-[#d8cb3f] ml-2 mt-2 rounded-full" />
                 </header>
 
                 {/* About Me Section */}
@@ -334,9 +406,10 @@ export default function Dashboard() {
                 <section className="flex flex-col items-start justify-start p-4 gap-2 w-full h-auto first-letter:capitalize text-left">
                   <div className="w-full font-bold text-2xl flex-col">
                     My Interests
+                    <hr className="w-[40px] h-[3px] bg-[#f4e53e] mt-2 rounded-full animate-gradient-left-to-right" />
                   </div>
                   <div className="w-full flex flex-wrap gap-[18px] p-[30px] justify-between">
-                    <div className="max-w-[360px] rounded-3xl min-h-[200px] flex items-center justify-center gap-3 p-[18px] bg-[#212123] border-[1px]">
+                    <div className="sm:max-w-[200px] lg:max-w-[360px] rounded-3xl min-h-[200px] flex items-center justify-center gap-3 p-[18px] bg-[#212123] border-[1px]">
                       <div className="flex flex-col gap-2 p-3">
                         <span className="text-xl font-semibold flex gap-3">
                           <svg
@@ -358,7 +431,7 @@ export default function Dashboard() {
                         </span>
                       </div>
                     </div>
-                    <div className="max-w-[360px] rounded-3xl min-h-[200px] flex items-center justify-center gap-3 p-[18px] bg-[#212123] border-[1px]">
+                    <div className="sm:max-w-[200px] lg:max-w-[360px] rounded-3xl min-h-[200px] flex items-center justify-center gap-3 p-[18px] bg-[#212123] border-[1px]">
                       <div className="flex flex-col gap-2 p-3">
                         <span className="text-xl font-semibold flex gap-3">
                           <svg
@@ -380,7 +453,7 @@ export default function Dashboard() {
                         </span>
                       </div>
                     </div>
-                    <div className="max-w-[360px] rounded-3xl min-h-[200px] flex items-center justify-center gap-3 p-[18px] bg-[#212123] border-[1px]">
+                    <div className="sm:max-w-[200px] lg:max-w-[360px] rounded-3xl min-h-[200px] flex items-center justify-center gap-3 p-[18px] bg-[#212123] border-[1px]">
                       <div className="flex flex-col gap-2 p-3">
                         <span className="text-xl font-semibold flex gap-3">
                           <svg
@@ -402,7 +475,7 @@ export default function Dashboard() {
                         </span>
                       </div>
                     </div>
-                    <div className="max-w-[360px] rounded-3xl min-h-[200px] flex items-center justify-center gap-3 p-[18px] bg-[#212123] border-[1px]">
+                    <div className="sm:max-w-[200px] lg:max-w-[360px] rounded-3xl min-h-[200px] flex items-center justify-center gap-3 p-[18px] bg-[#212123] border-[1px]">
                       <div className="flex flex-col gap-2 p-3">
                         <span className="text-xl font-semibold flex gap-3">
                           <svg
@@ -430,57 +503,43 @@ export default function Dashboard() {
                 {/* Testimonials / Recommendations */}
 
                 <section className="flex flex-col gap-3 items-center justify-center">
-                  <h1 className="text-2xl font-bold">Testimonials</h1>
+                  <h1 className="text-2xl font-bold ">Testimonials</h1>
 
-                  <div className="flex overflow-x-auto gap-3 max-w-[730px] p-3">
-                    <Testimonial
-                      name={"Aditya Raj"}
-                      imageSrc={"/Avtar.png"}
-                      description={
-                        "Tejas I worked in the same team for a project for 6 months. &nbsp;"
-                      }
-                      link={"https://www.linkedin.com/in/tejasmishr"}
-                      fulldecription={`Tejas I worked in the same team for a project for 6 months. He is very fast learner. Being an intern, He was able to understand project objective and learned the required skills very quickly. He contributed to both frontend and backend part of the project.
-He possesses very good presentation and communication skills. He also has a positive attitude to his work.
-Harsh will be an asset to any team and I wish him all the best`}
-                    />
+                  <div className="flex overflow-x-auto gap-3 md:max-w-[530px] lg:max-w-[730px] p-3">
+                    {Testimonials.map((testimonial, index) => (
+                      <Testimonial
+                        key={index}
+                        name={testimonial.name}
+                        imageSrc={testimonial.imageSrc}
+                        description={testimonial.description}
+                        link={testimonial.link}
+                        fulldecription={testimonial.fulldecription}
+                      />
+                    ))}
                   </div>
                 </section>
                 {/* Experience */}
                 <section className="flex flex-col gap-3 items-center justify-center mt-4">
                   <h1 className="text-2xl font-bold">Experience</h1>
-                  <div className="flex flex-wrap justify-center items-center gap-2">
-                    <div className="w-[150px] h-[120px] ">
-                      <Image
-                        src="/Avtar.png"
-                        width={60}
-                        height={60}
-                        alt="Picture of the author"
-                      />
-                    </div>
-                    <div className="w-[150px] h-[120px] ">
-                      <Image
-                        src="/Avtar.png"
-                        width={60}
-                        height={60}
-                        alt="Picture of the author"
-                      />
-                    </div>
-                    <div className="w-[150px] h-[120px] ">
-                      <Image
-                        src="/Avtar.png"
-                        width={60}
-                        height={60}
-                        alt="Picture of the author"
-                      />
-                    </div>
-                    <div className="w-[150px] h-[120px] ">
-                      <Image
-                        src="/Avtar.png"
-                        width={60}
-                        height={60}
-                        alt="Picture of the author"
-                      />
+                  <div className="flex overflow-x-auto md:max-w-[480px] lg:max-w-[730px] p-2">
+                    <div className="flex gap-2 overflow-auto">
+                      {Experiences.map(({ company, logo }, index) => (
+                        <div
+                          key={index}
+                          className="min-w-[120px] min-h-[120px] flex items-start justify-start rounded-3xl bg-[#f3f2f2] border-[1px] p-3 hover:animate-zoomIn cursor-pointer hover:bg-slate-200 hover:scale-105 ease-in-out duration-300"
+                        >
+                          <div className="flex items-start justify-start overflow-hidden">
+                            <Image
+                              src={logo}
+                              width={100}
+                              height={100}
+                              alt={company}
+                              className="object-contain rounded-full"
+                              style={{ background: "none" }}
+                            />
+                          </div>
+                        </div>
+                      ))}
                     </div>
                   </div>
                 </section>
