@@ -85,11 +85,11 @@ export default function Dashboard() {
   };
 
   return (
-    <div className="text-center p-8 max-w-[1250px] h-screen overflow-auto">
-      <h1>Dashboard</h1>
-      <div className="flex gap-3 justify-between p-3 max-w-[1250px]">
+    <div className="flex justify-center text-center p-8 lg:min-w-[850px]   h-screen overflow-auto  sm:justify-start ">
+      {/* <h1>Dashboard</h1> */}
+      <div className=" flex gap-3 justify-between p-3 max-w-[1250px] lg:flex md:flex sm:flex-col md:flex-row">
         {/* Contact DIV */}
-        <div className=" p-4 h-full w-[280px] rounded-lg bg-[#1e1e1f] border-[1px] border-[#555556] sticky top-1">
+        <div className="lg:block xl:block md:block p-4  w-[280px] rounded-lg bg-[#1e1e1f] border-[1px] border-[#555556] sticky top-1 sm:hidden">
           <div className="align-middle">
             <div className="text-3xl pt-5 p-3 flex flex-col gap-2">
               <div className="animate-rotate rounded-3xl border-[1px] border-solid border-rgb(34, 116, 107) bg-[#343434]">
@@ -122,7 +122,7 @@ export default function Dashboard() {
               </div>
             </div>
             {/* Email */}
-            <div className="mt-6 p-3 flex flex-col gap-3 justify-between">
+            <div className="mt-6 p-3 flex flex-col gap-3 justify-between lg:block xl:block md:hidden">
               <div className="flex p-[2px] items-center gap-3 justify-start">
                 <div className="cursor-pointer">
                   <svg
@@ -273,10 +273,16 @@ export default function Dashboard() {
         {/* Profile DIV STARTS HERE */}
 
         {/* Main Content */}
-        <div className="h-full w-full rounded-2xl bg-[#1e1e1f] border-[1px] border-[#5555566">
+        <div
+          className=" w-full rounded-2xl bg-[#1e1e1f] border-[1px] border-[#555556] overflow-auto scroll-smooth "
+          style={{
+            scrollbarWidth: "thin",
+            scrollbarColor: "#FFE7A1 red",
+          }}
+        >
           <div className="">
             <div className="Nav flex justify-end items-end flex-col relative z-10">
-              <nav className="navbar h-12 bg-[#282829] backdrop-blur-md border-[1px] border-[#282829] shadow-md flex justify-end items-center rounded-b-2xl rounded-r-2xl px-10 z-50  w-[580px] max-md:fixed bottom-0 right-0">
+              <nav className="navbar h-12 bg-[#282829] backdrop-blur-md border-[1px] border-[#282829] shadow-md flex justify-end items-center rounded-b-2xl rounded-r-2xl px-10 z-50 lg:w-[480] xl:w-[680px] max-md:fixed bottom-0 left-0 right-0 max-md:shadow-none]">
                 <ul className="navbar-list flex gap-7">
                   <li className="navbar-item">
                     <button
@@ -402,6 +408,7 @@ export default function Dashboard() {
                     like Aldus PageMaker including versions of Lorem Ipsum
                   </p>
                 </section>
+
                 {/* My interest Section */}
                 <section className="flex flex-col items-start justify-start p-4 gap-2 w-full h-auto first-letter:capitalize text-left">
                   <div className="w-full font-bold text-2xl flex-col">
@@ -409,7 +416,7 @@ export default function Dashboard() {
                     <hr className="w-[40px] h-[3px] bg-[#f4e53e] mt-2 rounded-full animate-gradient-left-to-right" />
                   </div>
                   <div className="w-full flex flex-wrap gap-[18px] p-[30px] justify-between">
-                    <div className="sm:max-w-[200px] lg:max-w-[360px] rounded-3xl min-h-[200px] flex items-center justify-center gap-3 p-[18px] bg-[#212123] border-[1px]">
+                    <div className="sm:max-w-[200px]  md:max-w-[250px] lg:max-w-[310px] xl:max-w-[390px] rounded-3xl min-h-[200px] flex items-center justify-center gap-3 p-[18px] bg-[#212123] border-[1px]">
                       <div className="flex flex-col gap-2 p-3">
                         <span className="text-xl font-semibold flex gap-3">
                           <svg
@@ -431,7 +438,7 @@ export default function Dashboard() {
                         </span>
                       </div>
                     </div>
-                    <div className="sm:max-w-[200px] lg:max-w-[360px] rounded-3xl min-h-[200px] flex items-center justify-center gap-3 p-[18px] bg-[#212123] border-[1px]">
+                    <div className="sm:max-w-[200px] md:max-w-[250px]  lg:max-w-[310px] xl:max-w-[390px] rounded-3xl min-h-[200px] flex items-center justify-center gap-3 p-[18px] bg-[#212123] border-[1px]">
                       <div className="flex flex-col gap-2 p-3">
                         <span className="text-xl font-semibold flex gap-3">
                           <svg
@@ -453,7 +460,7 @@ export default function Dashboard() {
                         </span>
                       </div>
                     </div>
-                    <div className="sm:max-w-[200px] lg:max-w-[360px] rounded-3xl min-h-[200px] flex items-center justify-center gap-3 p-[18px] bg-[#212123] border-[1px]">
+                    <div className="sm:max-w-[200px]  md:max-w-[250px] lg:max-w-[310px] xl:max-w-[390px] rounded-3xl min-h-[200px] flex items-center justify-center gap-3 p-[18px] bg-[#212123] border-[1px]">
                       <div className="flex flex-col gap-2 p-3">
                         <span className="text-xl font-semibold flex gap-3">
                           <svg
@@ -475,7 +482,7 @@ export default function Dashboard() {
                         </span>
                       </div>
                     </div>
-                    <div className="sm:max-w-[200px] lg:max-w-[360px] rounded-3xl min-h-[200px] flex items-center justify-center gap-3 p-[18px] bg-[#212123] border-[1px]">
+                    <div className="sm:max-w-[200px]  md:max-w-[250px] lg:max-w-[310px] xl:max-w-[390px] rounded-3xl min-h-[200px] flex items-center justify-center gap-3 p-[18px] bg-[#212123] border-[1px]">
                       <div className="flex flex-col gap-2 p-3">
                         <span className="text-xl font-semibold flex gap-3">
                           <svg
@@ -522,13 +529,23 @@ export default function Dashboard() {
                 <section className="flex flex-col gap-3 items-center justify-center mt-4">
                   <h1 className="text-2xl font-bold">Experience</h1>
                   <div className="flex overflow-x-auto md:max-w-[480px] lg:max-w-[730px] p-2">
-                    <div className="flex gap-2 overflow-auto">
+                    <div className="flex gap-2 overflow-hidden p-4">
                       {Experiences.map(({ company, logo }, index) => (
                         <div
                           key={index}
-                          className="min-w-[120px] min-h-[120px] flex items-start justify-start rounded-3xl bg-[#f3f2f2] border-[1px] p-3 hover:animate-zoomIn cursor-pointer hover:bg-slate-200 hover:scale-105 ease-in-out duration-300"
+                          className="min-w-[120px] min-h-[120px] flex items-start justify-start rounded-3xl bg-[#f3f2f2] border-[1px] p-3 hover:animate-pulse-yellow cursor-pointer hover:bg-slate-200 hover:scale-105 ease-in-out duration-300 hover:translate-stop"
+                          style={{
+                            animation: "reverseTranslateX 13s linear infinite",
+                          }}
                         >
-                          <div className="flex items-start justify-start overflow-hidden">
+                          <div
+                            className="flex items-start justify-start overflow-hidden"
+                            style={
+                              {
+                                // animation: "reverseTranslateX 6s linear infinite",
+                              }
+                            }
+                          >
                             <Image
                               src={logo}
                               width={100}
