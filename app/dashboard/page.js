@@ -5,6 +5,8 @@ import "./page.css";
 import Model from "@/components/Model";
 import Link from "next/link";
 import Testimonial from "@/components/Testimonial";
+import Resume from "@/components/Resume";
+import Education from "@/components/Education";
 const Testimonials = [
   {
     name: "Aditya Raj",
@@ -77,6 +79,87 @@ const Experiences = [
     logo: "/ibm.png",
   },
 ];
+
+const Resumaes = [
+  {
+    company: "Physics Wallah",
+    designation: "Software Developer",
+    joiningDate: "2020-01-01",
+    leavingDate: "Present",
+    description: {
+      points: [
+        "lorem ipsum dolor sit ame met, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna alit lorem ipsum dolor sit ame met, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna alit",
+        "lorem ipsum dolor sit ame met, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna alit",
+        "lorem ipsum dolor sit ame met, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna alit",
+        "lorem ipsum dolor sit ame met, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna alit",
+        "lorem ipsum dolor sit ame met, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna alit",
+      ],
+    },
+  },
+  {
+    company: "Amazon",
+    designation: "Software Developer",
+    joiningDate: "2020-01-01",
+    leavingDate: "2020-01-01" || "Present",
+    description: {
+      points: [
+        "lorem ipsum dolor sit ame met, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna alit lorem ipsum dolor sit ame met, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna alit",
+        "lorem ipsum dolor sit ame met, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna alit",
+        "lorem ipsum dolor sit ame met, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna alit",
+        "lorem ipsum dolor sit ame met, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna alit",
+        "lorem ipsum dolor sit ame met, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna alit",
+      ],
+    },
+  },
+];
+
+const Educations = [
+  {
+    name: "ABC",
+    session: "2020-2021",
+    course: "B.Tech Information Technology",
+    CGPA: "8.0",
+    description: {
+      points: [
+        "lorem ipsum dolor sit ame met, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna alit lorem ipsum dolor sit ame met, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna alit",
+        "lorem ipsum dolor sit ame met, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna alit",
+        "lorem ipsum dolor sit ame met, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna alit",
+        "lorem ipsum dolor sit ame met, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna alit",
+        "lorem ipsum dolor sit ame met, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna alit",
+      ],
+    },
+  },
+  {
+    name: "LPS",
+    session: "2020-2021",
+    course: "B.Tech Information Technology",
+    CGPA: "8.0",
+    description: {
+      points: [
+        "lorem ipsum dolor sit ame met, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna alit lorem ipsum dolor sit ame met, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna alit",
+        "lorem ipsum dolor sit ame met, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna alit",
+        "lorem ipsum dolor sit ame met, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna alit",
+        "lorem ipsum dolor sit ame met, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna alit",
+        "lorem ipsum dolor sit ame met, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna alit",
+      ],
+    },
+  },
+];
+
+const skills = {
+  leveled: [
+    { name: "HTML", level: "80" },
+    { name: "CSS", level: "70" },
+    { name: "JavaScript", level: "60" },
+    { name: "React", level: "20" },
+  ],
+  otherskills: [
+    { name: "C", level: "80" },
+    { name: "C++", level: "70" },
+    { name: "Java", level: "60" },
+    { name: "Python", level: "20" },
+  ],
+};
 export default function Dashboard() {
   const [activeTab, setActiveTab] = React.useState("");
 
@@ -85,7 +168,7 @@ export default function Dashboard() {
   };
 
   return (
-    <div className="flex justify-center text-center p-8 lg:min-w-[850px]   h-screen overflow-auto  sm:justify-start ">
+    <div className="flex justify-center text-center p-8 xl:min-w-[980px]   h-screen overflow-auto  sm:justify-start ">
       {/* <h1>Dashboard</h1> */}
       <div className=" flex gap-3 justify-between p-3 max-w-[1250px] lg:flex md:flex sm:flex-col md:flex-row">
         {/* Contact DIV */}
@@ -274,15 +357,15 @@ export default function Dashboard() {
 
         {/* Main Content */}
         <div
-          className=" w-full rounded-2xl bg-[#1e1e1f] border-[1px] border-[#555556] overflow-auto scroll-smooth "
+          className="rounded-2xl bg-[#1e1e1f] border-[1px] border-[#555556] overflow-auto scroll-smooth xl:min-w-[780px] lg:min-w-[720px] md:min-w-[480px] min-w-[300px]"
           style={{
             scrollbarWidth: "thin",
             scrollbarColor: "#FFE7A1 red",
           }}
         >
           <div className="">
-            <div className="Nav flex justify-end items-end flex-col relative z-10">
-              <nav className="navbar h-12 bg-[#282829] backdrop-blur-md border-[1px] border-[#282829] shadow-md flex justify-end items-center rounded-b-2xl rounded-r-2xl px-10 z-50 lg:w-[480] xl:w-[680px] max-md:fixed bottom-0 left-0 right-0 max-md:shadow-none]">
+            <div className="Nav flex justify-end items-end flex-col relative z-10 ">
+              <nav className=" navbar  h-12 bg-[#282829] backdrop-blur-md border-[1px] border-[#282829] shadow-md flex justify-end items-center rounded-b-2xl rounded-r-2xl px-10 z-50 lg:w-[480] xl:w-[680px] max-md:fixed bottom-0 left-0 right-0 max-md:shadow-none]">
                 <ul className="navbar-list flex gap-7">
                   <li className="navbar-item">
                     <button
@@ -370,7 +453,7 @@ export default function Dashboard() {
                 </header>
 
                 {/* About Me Section */}
-                <section className="flex flex-col items-start justify-start p-4 gap-2 w-full h-auto first-letter:capitalize text-left">
+                <section className="flex flex-col items-start justify-start p-4 gap-2  h-auto first-letter:capitalize text-left">
                   <p className="text-gray-300 text-sm font-thin items-start p-2">
                     Lorem Ipsum is simply dummy text of the printing and
                     typesetting industry. Lorem Ipsum has been the industry
@@ -410,7 +493,7 @@ export default function Dashboard() {
                 </section>
 
                 {/* My interest Section */}
-                <section className="flex flex-col items-start justify-start p-4 gap-2 w-full h-auto first-letter:capitalize text-left">
+                <section className="flex flex-col items-start justify-start p-4 gap-2  h-auto first-letter:capitalize text-left">
                   <div className="w-full font-bold text-2xl flex-col">
                     My Interests
                     <hr className="w-[40px] h-[3px] bg-[#f4e53e] mt-2 rounded-full animate-gradient-left-to-right" />
@@ -563,7 +646,152 @@ export default function Dashboard() {
               </>
             )}
 
-            {activeTab === "resume" && <div>Tab-2</div>}
+            {activeTab === "resume" && (
+              <>
+                <header className="relative -top-[30px] items-start justify-start flex pl-4 font-bold text-3xl flex-col z-4">
+                  <span className="pl-2">Resume</span>
+                  <hr className="w-[40px] h-[3px] bg-[#d8cb3f] ml-2 mt-2 rounded-full" />
+                </header>
+                <section className="h-full flex flex-col items-start justify-start p-4 gap-2 first-letter:capitalize text-left">
+                  {/* EXPERIENCE HEADING */}
+                  <div className="flex p-1 gap-2 items-center h-auto">
+                    <span className="p-2 rounded-xl bg-[#2a2a2b]">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 512 512"
+                        className="w-6 h-6"
+                      >
+                        <path
+                          fill="#eeb311"
+                          d="M176 56V96H336V56c0-4.4-3.6-8-8-8H184c-4.4 0-8 3.6-8 8zM128 96V56c0-30.9 25.1-56 56-56H328c30.9 0 56 25.1 56 56V96h64c35.3 0 64 28.7 64 64V280 416c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V280 160c0-35.3 28.7-64 64-64h64zM48 304V416c0 8.8 7.2 16 16 16H448c8.8 0 16-7.2 16-16V304H320v16c0 17.7-14.3 32-32 32H224c-17.7 0-32-14.3-32-32V304H48zm144-48H320 464V160c0-8.8-7.2-16-16-16H360 152 64c-8.8 0-16 7.2-16 16v96H192z"
+                        />
+                      </svg>
+                    </span>
+                    <span className="font-bold text-neutral-400">
+                      <h3> Experience</h3>
+                    </span>
+                  </div>
+
+                  {/* Experience Start Here */}
+                  <section className="flex flex-col items-start justify-start p-1 gap-2 first-letter:capitalize text-left h-full">
+                    {/* Experience Content */}
+                    <div className="flex items-start justify-center h-full  relative ">
+                      {/* Line Div */}
+                      <div className="h-full absolute left-[16px] -top-[18px] w-[2px] rounded-full border-[1px] border-solid border-[#2A2A2B]"></div>
+
+                      {/* Resumae Div Data Map */}
+                      <div className="overflow-auto">
+                        {Resumaes.map((resume, index) => (
+                          <Resume key={index} resume={resume} />
+                        ))}
+                        {Resumaes.map((resume, index) => (
+                          <Resume key={index} resume={resume} />
+                        ))}
+                      </div>
+                    </div>
+                  </section>
+                </section>
+
+                {/* Education */}
+                <section className="h-full flex flex-col items-start justify-start p-4 gap-2 first-letter:capitalize text-left">
+                  {/* Education HEADING */}
+                  <div className="flex p-1 gap-2 items-center h-auto">
+                    <span className="p-2 rounded-xl bg-[#2a2a2b]">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 576 512"
+                        className="w-6 h-6"
+                      >
+                        <path
+                          fill="#eeb311"
+                          d="M156 32C100.6 32 48.8 46.6 27.1 53.6C10.3 59 0 74.5 0 91.1V403.5c0 26.1 24 44.2 48 40.2c19.8-3.3 54.8-7.7 100-7.7c54 0 97.5 25.5 112.5 35.6c7.5 5 16.8 8.4 27 8.4c11.5 0 21.6-4.2 29.3-9.9C330.2 460.3 369.1 436 428 436c47.7 0 80.5 4 99 7.2c23.9 4.1 49-13.8 49-40.6V91.1c0-16.5-10.3-32.1-27.1-37.5C527.2 46.6 475.4 32 420 32c-36.8 0-71.8 6.4-97.4 12.7c-12.8 3.2-23.5 6.3-30.9 8.7c-1.3 .4-2.6 .8-3.7 1.2c-1.1-.4-2.4-.8-3.7-1.2c-7.5-2.4-18.1-5.5-30.9-8.7C227.8 38.4 192.8 32 156 32zM264 97.3V417.9C238 404.2 196.8 388 148 388c-42.9 0-77.4 3.7-100 7.1V97.3C70.3 90.6 112.4 80 156 80c31.6 0 62.6 5.6 85.9 11.3c8.6 2.1 16.1 4.2 22.1 6zm48 319.2V97.3c6-1.8 13.5-3.9 22.1-6C357.4 85.6 388.4 80 420 80c43.6 0 85.7 10.6 108 17.3V394.7c-21.7-3.3-54.9-6.7-100-6.7c-51.4 0-90.8 15-116 28.6z"
+                        />
+                      </svg>
+                    </span>
+                    <span className="font-bold text-neutral-400">
+                      <h3>Education</h3>
+                    </span>
+                  </div>
+
+                  {/* Education Start Here */}
+                  <section className="flex flex-col items-start justify-start p-1 gap-2 first-letter:capitalize text-left h-full">
+                    {/* Education Content */}
+                    <div className="flex items-start justify-center h-full  relative ">
+                      {/* Line Div */}
+                      <div className="h-full absolute left-[16px] -top-[18px] w-[2px] rounded-full border-[1px] border-solid border-[#2A2A2B]"></div>
+
+                      {/* Education Div Data Map */}
+                      <div className="overflow-auto">
+                        {Educations.map((education, index) => (
+                          <Education key={index} education={education} />
+                        ))}
+                      </div>
+                    </div>
+                  </section>
+
+                  {/* Education End Here */}
+
+                  {/* My skills */}
+                  <section className="flex flex-col items-start justify-start p-1 gap-2 first-letter:capitalize text-left h-full ">
+                    <div className="flex p-1 gap-2 items-center h-auto">
+                      <span className="p-2 rounded-xl bg-[#2a2a2b]">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 640 512"
+                          className="w-6 h-6"
+                        >
+                          <defs style={{ opacity: 0.4 }}></defs>
+                          <path
+                            style={{ opacity: 0.4 }}
+                            fill="white"
+                            d="M325.6 139.8c8.3-3.1 12.5-12.3 9.4-20.6s-12.3-12.5-20.6-9.4L154.9 169.6C92.4 193.1 50.4 251.8 48.1 318.2c-.1 .6-.1 1.2-.1 1.8c0 28.4-10.8 57.8-22.3 80.8c-6.5 13-13.9 25.8-22.5 37.6C0 442.7-.9 448.3 .9 453.4s6 8.9 11.2 10.2l64 16c4.2 1.1 8.7 .3 12.4-2s6.3-6.1 7.1-10.4c8.6-42.8 4.3-81.2-2.1-108.7c-3.2-14-7.5-28.3-13.4-41.5c2.8-52.5 36.4-98.7 86-117.3l159.4-59.8z"
+                          />
+                          <path
+                            fill="#eeb311"
+                            d="M320 32c-8.1 0-16.1 1.4-23.7 4.1L15.8 137.4C6.3 140.9 0 149.9 0 160s6.3 19.1 15.8 22.6l77.4 27.9c16.8-17.8 37.8-31.9 61.7-40.9l159.4-59.8c8.3-3.1 17.5 1.1 20.6 9.4s-1.1 17.5-9.4 20.6L166.2 199.6c-14.6 5.5-27.8 13.4-39.3 23.1l169.5 61.2c7.6 2.7 15.6 4.1 23.7 4.1s16.1-1.4 23.7-4.1L624.2 182.6c9.5-3.4 15.8-12.5 15.8-22.6s-6.3-19.1-15.8-22.6L343.7 36.1C336.1 33.4 328.1 32 320 32zM128 408c0 35.3 86 72 192 72s192-36.7 192-72L496.7 262.6 354.5 314c-11.1 4-22.8 6-34.5 6s-23.5-2-34.5-6L143.3 262.6 128 408z"
+                          />
+                        </svg>
+                      </span>
+                      <span className="font-bold text-neutral-400">
+                        <h3>My Skills</h3>
+                      </span>
+                    </div>
+                    {/* Skill Percentage Div  */}
+                    <div className="pt-2 xl:w-[900px] lg:w-[720px] md:w-[600px] sm:w-[400px] border-[1px] border-neutral-400 bg-[#202122] rounded-3xl">
+                      {skills.leveled.map((skill, index) => (
+                        <div
+                          key={index}
+                          className="p-2 h-full w-full flex flex-col gap-3 "
+                        >
+                          <div className="p-2 text-neutral-400 text-semibold font-['open_sans']">
+                            <span>
+                              {skill.name} : {skill.level}%
+                            </span>
+                            <div className="xl:w-[840px] lg:w-[650px] md:w-[550px] sm:w-[340px] bg-[#3b3b38] rounded-full">
+                              <div
+                                style={{ width: `${skill.level}%` }}
+                                className="h-[3px] bg-[#ece562] rounded-full"
+                              ></div>
+                            </div>
+                          </div>
+                        </div>
+                      ))}
+                      <span className="font-bold text-neutral-400 p-4 ">
+                        Other Skills
+                      </span>
+                      <div className="pl-4 h-full w-full flex items-center gap-3">
+                        {skills.otherskills.map((skill, index) => (
+                          <li className="pl-3 pr-3 pt-1 pb-1 text-xs">
+                            {skill.name}
+                          </li>
+                        ))}
+                      </div>
+                      <div className="h-3"></div>
+                    </div>
+                  </section>
+                </section>
+              </>
+            )}
 
             {activeTab === "projects" && <div>Tab-3</div>}
             {activeTab === "education" && <div>Tab-4</div>}
