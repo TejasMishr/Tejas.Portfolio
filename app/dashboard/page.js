@@ -796,13 +796,16 @@ export default function Dashboard() {
                       <span className="font-bold text-neutral-400 p-4 ">
                         Other Skills
                       </span>
-                      <div className="pl-4 h-full w-full flex items-center gap-3">
+                      <ul className="pl-4 h-full w-full flex items-center gap-3">
                         {skills.otherskills.map((skill, index) => (
-                          <li className="pl-3 pr-3 pt-1 pb-1 text-xs">
+                          <li
+                            key={index}
+                            className="pl-3 pr-3 pt-1 pb-1 text-xs"
+                          >
                             {skill.name}
                           </li>
                         ))}
-                      </div>
+                      </ul>
                       <div className="h-3"></div>
                     </div>
                   </section>
