@@ -30,7 +30,7 @@ export default function Education({ education }) {
                   {education.CGPA}
                 </span>
 
-                <ul className="list-disc pl-8 gap-2 flex flex-col mt-2 p-[3px] gap-2">
+                <ul className="list-disc pl-8 flex flex-col mt-2 p-[3px] gap-2">
                   {education.description.points.map((point) => (
                     <li
                       key={point}

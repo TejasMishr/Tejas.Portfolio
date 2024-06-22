@@ -160,6 +160,21 @@ const skills = {
     { name: "Python", level: "20" },
   ],
 };
+
+const Projects = [
+  {
+    name: "Project 1",
+    description:
+      "lorem ipsum dolor sit ame met, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna alit",
+    link: "https://www.google.com",
+  },
+  {
+    name: "Project 2",
+    description:
+      "lorem ipsum dolor sit ame met, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna alit",
+    link: "https://www.google.com",
+  },
+];
 export default function Dashboard() {
   const [activeTab, setActiveTab] = React.useState("");
 
@@ -444,6 +459,8 @@ export default function Dashboard() {
             </div>
 
             {/* Tabs Start Here */}
+
+            {/* About */}
             {(activeTab === "about" || activeTab === "") && (
               <>
                 {/* About Header */}
@@ -645,7 +662,7 @@ export default function Dashboard() {
                 </section>
               </>
             )}
-
+            {/* Resume */}
             {activeTab === "resume" && (
               <>
                 <header className="relative -top-[30px] items-start justify-start flex pl-4 font-bold text-3xl flex-col z-4">
@@ -792,8 +809,166 @@ export default function Dashboard() {
                 </section>
               </>
             )}
+            {/* Projects */}
+            {activeTab === "projects" && (
+              <>
+                <header className="relative -top-[30px] items-start justify-start flex pl-4 font-bold text-3xl flex-col">
+                  <span className="pl-2">About Me</span>
+                  <hr className="w-[40px] h-[3px] bg-[#d8cb3f] ml-2 mt-2 rounded-full" />
+                </header>
 
-            {activeTab === "projects" && <div>Tab-3</div>}
+                {/* About Me Section */}
+                <section className="flex flex-col items-start justify-start first-letter:capitalize text-left h-[0.2px] overflow-hidden">
+                  <p className="text-gray-300 text-sm font-thin items-start">
+                    Lorem Ipsum is simply dummy text of the printing and
+                    typesetting industry. Lorem Ipsum has been the industry
+                    standard dummy text ever since the 1500s, when an unknown
+                    printer took a galley of type and scrambled it to make a
+                    type specimen book. It has survived not only five centuries,
+                    but also the leap into electronic typesetting, remaining
+                    essentially unchanged. It was popularised in the 1960s with
+                    the release of Letraset sheets containing Lorem Ipsum
+                    passages, and more recently with desktop publishing software
+                    like Aldus PageMaker including versions of Lorem Ipsum
+                  </p>
+                </section>
+
+                <section className="p-2 flex gap-2 flex-col">
+                  <div className="flex p-1 gap-2 items-center h-auto ">
+                    <span className="p-2 rounded-xl bg-[#2a2a2b]">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 512 512"
+                        className="w-5 h-5"
+                      >
+                        <defs></defs>
+                        <path
+                          fill="#edae4f"
+                          style={{ opacity: 0.6 }}
+                          d="M448 480H64c-35.3 0-64-28.7-64-64V96C0 60.7 28.7 32 64 32H192c20.1 0 39.1 9.5 51.2 25.6l19.2 25.6c6 8.1 15.5 12.8 25.6 12.8H448c35.3 0 64 28.7 64 64V416c0 35.3-28.7 64-64 64zM176 224a32 32 0 1 0 -64 0 32 32 0 1 0 64 0zm120 0c-8 0-15.5 4-20 10.7l-56 84L202.7 297c-4.6-5.7-11.5-9-18.7-9s-14.2 3.3-18.7 9l-64 80c-5.8 7.2-6.9 17.1-2.9 25.4s12.4 13.6 21.6 13.6h80 48H392c8.9 0 17-4.9 21.2-12.7s3.7-17.3-1.2-24.6l-96-144C311.5 228 304 224 296 224z"
+                        />
+                        <path
+                          fill="#d8cb3f"
+                          d="M296 224c8 0 15.5 4 20 10.7l96 144c4.9 7.4 5.4 16.8 1.2 24.6S400.9 416 392 416H248 200 120c-9.2 0-17.6-5.3-21.6-13.6s-2.9-18.2 2.9-25.4l64-80c4.6-5.7 11.4-9 18.7-9s14.2 3.3 18.7 9l17.3 21.6 56-84C280.5 228 288 224 296 224z"
+                        />
+                      </svg>
+                    </span>
+                    <span className="font-bold text-neutral-400">
+                      <h3>Projects</h3>
+                    </span>
+                  </div>
+                  <div className="flex gap-6 justify-between pl-6 pr-6 flex-wrap p-2 ">
+                    {Projects.map((project) => (
+                      <div className="card" key={project.name}>
+                        <Image
+                          src="/mmmut.xyz.png"
+                          alt="image"
+                          width={100}
+                          height={100}
+                          objectFit="cover"
+                          className="w-full h-full"
+                          style={{ aspectRatio: "1/1" }}
+                        />
+                        <div className="card__content cursor-pointer ">
+                          <p className="card__title sm:text-sm sm:font-semibold">
+                            {project.name}
+                          </p>
+                          <p className="card__description text-left gap-2 flex flex-col">
+                            {project.description.split("\n").map((line) => (
+                              <li key={line}>{line}</li>
+                            ))}
+                          </p>
+                          <button className="text-white bg-[#2a2a2b] rounded-md px-2 py-1 hover:bg-[#343434]">
+                            View
+                          </button>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+
+                  <div>
+                    <div className="h-[2px] bg-[#2a2a2b]"></div>
+                  </div>
+
+                  <div className="p-2  rounded-3xl border-2">
+                    <div className="relative h-auto bg-[#2a2a2b] group">
+                      <Image
+                        src="/mmmut.png"
+                        alt="image"
+                        width={200}
+                        height={100}
+                        objectFit="contain"
+                        className="w-full h-full transition-all duration-200 ease-in-out group-hover:blur-sm"
+                        style={{ aspectRatio: "1.8/0.8" }}
+                        quality={100}
+                      />
+                      <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200 ease-in-out flex-col">
+                        <span className="text-3xl font-bold text-blue-900">
+                          Mini-ERP System
+                        </span>
+                        <button className="bg-blue-500 text-white font-bold py-2 px-4 rounded-lg hover:bg-blue-600">
+                          <Link
+                            href="https://faculty.mmmut.xyz/"
+                            target="_blank"
+                          >
+                            View
+                          </Link>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+                <div>
+                  <div className="h-[2px] bg-[#2a2a2b]"></div>
+                </div>
+                <section className="p-2">
+                  <div className="flex p-1 gap-2 items-center h-auto ">
+                    <span className="p-2 rounded-xl bg-[#2a2a2b]">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 496 512"
+                        class="w-7 h-7"
+                      >
+                        <path
+                          fill="#ffffff"
+                          d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3 .3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5 .3-6.2 2.3zm44.2-1.7c-2.9 .7-4.9 2.6-4.6 4.9 .3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3 .7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3 .3 2.9 2.3 3.9 1.6 1 3.6 .7 4.3-.7 .7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3 .7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3 .7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"
+                        ></path>
+                      </svg>
+                    </span>
+                    <span className="font-bold text-neutral-400">
+                      <h3>Github</h3>
+                    </span>
+                  </div>
+                  <div className="p-2  rounded-3xl border-2">
+                    <div className="relative h-auto bg-[#2a2a2b] group">
+                      <Image
+                        src="/Github.png"
+                        alt="image"
+                        width={200}
+                        height={100}
+                        objectFit="contain"
+                        className="w-full h-full transition-all duration-200 ease-in-out group-hover:blur-sm"
+                        style={{ aspectRatio: "1.8/0.8" }}
+                        quality={100}
+                      />
+                      <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200 ease-in-out flex-col">
+                        <span className="text-3xl font-bold text-white">
+                          Github
+                        </span>
+                        <button className="bg-blue-500 text-white font-bold py-2 px-4 rounded-lg hover:bg-blue-600">
+                          <Link
+                            href="https://github.com/TejasMishr/"
+                            target="_blank"
+                          >
+                            View
+                          </Link>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+              </>
+            )}
             {activeTab === "education" && <div>Tab-4</div>}
             {activeTab === "certifications" && <div>Tab-5</div>}
             {activeTab === "extra" && <div>Tab-6</div>}
